@@ -1,0 +1,86 @@
+<meta charset="utf-8">
+<script>
+	
+var rounds = parseInt(prompt('Число раундов?'));
+var arr = [];
+var zeros = 0;
+var i = 0;
+
+// Добавляю массивы с красными и черными секторами
+var redArr = [1,3,5,7,9,12,14,16,18,21,23,25,27,28,30,32,34,36];
+var blackArr = [2,4,6,8,10,11,13,15,17,19,20,22,24,26,29,31,33,35];
+var red = 0;
+var black = 0;
+var num = 0;
+var redMaxArr = [];
+var redMax = 0;
+
+for(i=1; i<=rounds; i++) { // Здесь у автора ошибка, отсчет раундов нужно начинать с 1-цы
+	arr.push(Math.round(Math.random()*36));
+}
+alert(arr);
+
+// Выбираю значения красного, сравниваю с результатами раундов и меняю на 1
+for(num of redArr) {
+	for(i=0; i<arr.length; i++) {
+		if(arr[i] == num) {
+			arr[i] = 1;
+		}
+	}
+	
+}
+alert(arr);
+
+// Выбираю значения черного, сравниваю с результатами раундов и меняю на -1
+for(num of blackArr) {
+	for(i=0; i<arr.length; i++) {
+		if(arr[i] == num) {
+			arr[i] = -1;
+		}
+	}
+	
+}
+alert(arr);
+
+for(i=0; i<arr.length; i++) {
+	if(arr[i] == 0) {
+		zeros++;
+	}
+}
+
+for(i=0; i<arr.length; i++) {
+	if(arr[i] == 1) {
+		red++;
+	}
+}
+
+for(i=0; i<arr.length; i++) {
+	if(arr[i] == -1) {
+		black++;
+	}
+}
+
+// Создаю массив с повторениями значения 1
+for(num of arr) {
+	if(num == 1) {
+		redMax++;
+	} else if (redMax > 0) {
+		redMaxArr.push(redMax);
+		redMax = 0;
+	}
+}
+alert(redMaxArr);
+
+// Выбираю максимальное значение из созданного массива
+for(i=0; i<redMaxArr.length; i++) {
+	if(redMaxArr[i] > redMax) {
+		redMax = redMaxArr[i];
+	}
+}
+
+alert('Частота выпадания зеро: ' + zeros/arr.length*100 + '%');
+alert('Частота выпадания красного: ' + red/arr.length*100 + '%');
+alert('Частота выпадания черного: ' + black/arr.length*100 + '%');
+alert('Максимальное число выпадения подряд красного: ' + redMax);
+
+</script>
