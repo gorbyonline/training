@@ -1,1 +1,4 @@
 print("Hello World!");
+print("What's up, dude?");
+print("What are you doing here?");
+print("How long are you here?");
