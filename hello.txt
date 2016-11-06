@@ -2,3 +2,5 @@ print("Hello World!");
 print("What's up, dude?");
 print("What are you doing here?");
 print("How long are you here?");
+print("Let's get out here!");
+print("Come on, dude!");
