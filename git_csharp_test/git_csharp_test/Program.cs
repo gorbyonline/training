@@ -12,6 +12,7 @@ namespace git_csharp_test
         {
             Console.WriteLine("Hello World!");
             Console.ReadLine();
+            Console.WriteLine("Hello everybody!");
         }
     }
 }
