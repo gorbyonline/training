@@ -6,3 +6,5 @@ print("Let's get out here!...");
 print("Come on, dude!")...;
 print("Come on, come on, man...");
 print("Let's go snowboarding!...");
+print("It's snowing...");
+print ("Too much snow...");
